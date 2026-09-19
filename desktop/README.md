@@ -75,7 +75,7 @@ The desktop app is a thin wrapper that:
 3. Connects to your backend API (localhost or remote)
 4. Provides native windowing, tray, and platform integration
 
-```
+```text
 desktop/
 ├── src/                  # React frontend source
 │   ├── App.tsx
@@ -125,6 +125,7 @@ openssl req -x509 -newkey rsa:4096 -keyout key.pem -out cert.pem -days 365 -node
 ## CI/CD
 
 GitHub Actions workflows are defined in `.github/workflows/build.yml`:
+
 - Builds backend, Windows, macOS, and Android packages
 - Includes linting, testing, and security scans
 - Uploads artifacts for each platform

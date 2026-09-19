@@ -1,0 +1,22 @@
+{
+  "version": "0.2",
+  "language": "en",
+  "words": [
+    "tauri",
+    "Tauri",
+    "rustup",
+    "msvc",
+    "nsis",
+    "cmdline",
+    "openmarketing",
+    "newkey",
+    "keyout",
+    "aarch64",
+    "amd64"
+  ],
+  "ignorePaths": [
+    "node_modules",
+    "dist",
+    "build"
+  ]
+}
