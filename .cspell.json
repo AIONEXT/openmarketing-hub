@@ -12,7 +12,12 @@
     "newkey",
     "keyout",
     "aarch64",
-    "amd64"
+    "amd64",
+    "tlsv",
+    "libexec",
+    "temurin",
+    "HSTS",
+    "appendonly"
   ],
   "ignorePaths": [
     "node_modules",

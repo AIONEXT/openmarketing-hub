@@ -102,7 +102,7 @@ npm run package:all
 ## 3. Build Output Paths
 
 | Platform | Build Command | Output Path |
-|----------|--------------|-------------|
+| --- | --- | --- |
 | Windows `.exe` | `npm run package:windows` | `desktop/src-tauri/target/release/bundle/nsis/` |
 | Windows `.msi` | `npm run package:windows` | `desktop/src-tauri/target/release/bundle/msi/` |
 | macOS `.dmg` | `npm run package:macos` | `desktop/src-tauri/target/release/` |
