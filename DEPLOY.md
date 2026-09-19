@@ -7,9 +7,15 @@ Production-ready deployment for commercial use across Windows, macOS, Android, a
 ```mermaid
 graph LR
     A[Desktop App] -->|HTTP| B[Backend API]
-    A -->|HTTP| C[PostgreSQL]
-    C -->|Query| D[Redis]
+    B -->|Query| C[PostgreSQL]
+    B -->|Cache| D[Redis]
     E[Worker] -->|Queue| D
+```
+
+## Prerequisites
+
+- **Node.js** 20.x
+- **Rust** (for Tauri desktop builds): `curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh`
 - **JDK 17+** (for Android APK builds)
 - **Android SDK/NDK** (for `.apk` builds): install via Android Studio
 - **PostgreSQL** 16+
