@@ -1,0 +1,38 @@
+{
+  "name": "openmarketing-hub-desktop",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc -b && vite build",
+    "preview": "vite preview",
+    "tauri:dev": "tauri dev",
+    "tauri:build": "tauri build",
+    "tauri:build:windows": "tauri build --target x86_64-pc-windows-msvc",
+    "tauri:build:macos": "tauri build --target x86_64-apple-darwin",
+    "tauri:build:android": "tauri android build --apk",
+    "tauri:build:all": "npm run tauri:build:windows && npm run tauri:build:macos && npm run tauri:build:android",
+    "package:windows": "npm run tauri:build:windows",
+    "package:macos": "npm run tauri:build:macos",
+    "package:android": "npm run tauri:build:android",
+    "package:all": "npm run tauri:build:all",
+    "icons:generate": "node scripts/generate-icons.js"
+  },
+  "dependencies": {
+    "@tauri-apps/api": "^2.0.0",
+    "@tauri-apps/plugin-http": "^2.0.0",
+    "@tauri-apps/plugin-shell": "^2.0.0",
+    "lucide-react": "^1.47.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-router-dom": "^6.20.0"
+  },
+  "devDependencies": {
+    "@tauri-apps/cli": "^2.0.0",
+    "@types/react": "^18.2.0",
+    "@types/react-dom": "^18.2.0",
+    "@vitejs/plugin-react": "^4.2.1",
+    "typescript": "^5.3.3",
+    "vite": "^5.0.0"
+  }
+}
