@@ -1,0 +1,71 @@
+{
+  "$schema": "https://schema.tauri.app/config/2",
+  "productName": "OpenMarketing Hub",
+  "version": "1.0.0",
+  "identifier": "com.openmarketing.hub",
+  "build": {
+    "frontendDist": "../dist",
+    "devUrl": "http://localhost:1420"
+  },
+  "app": {
+    "windows": [
+      {
+        "title": "OpenMarketing Hub",
+        "width": 1280,
+        "height": 800,
+        "minWidth": 900,
+        "minHeight": 600,
+        "resizable": true,
+        "maximized": true,
+        "fullscreen": false,
+        "visible": true,
+        "decorations": true,
+        "transparent": false,
+        "center": true,
+        "acceptFirstMouse": true
+      }
+    ],
+    "security": {
+      "csp": "default-src 'self'; img-src 'self' data:; style-src 'self' 'unsafe-inline'"
+    },
+    "android": {
+      "package": "com.openmarketing.hub",
+      "title": "OpenMarketing Hub",
+      "theme": "@style/Theme.AppCompat.DayNight.NoActionBar",
+      "permissions": [
+        "android.permission.INTERNET",
+        "android.permission.ACCESS_NETWORK_STATE",
+        "android.permission.WRITE_EXTERNAL_STORAGE",
+        "android.permission.READ_EXTERNAL_STORAGE"
+      ]
+    }
+  },
+  "bundle": {
+    "active": true,
+    "targets": ["nsis", "dmg", "apk"],
+    "icon": [
+      "icons/32x32.png",
+      "icons/128x128.png",
+      "icons/128x128@2x.png",
+      "icons/icon.ico"
+    ],
+    "android": {
+      "key": {
+        "keystore": null,
+        "alias": "OpenMarketingHub",
+        "password": null,
+        "keyPassword": null
+      },
+      "versionCode": 1,
+      "minSdkVersion": 24,
+      "targetSdkVersion": 34,
+      "compileSdkVersion": 34
+    },
+    "nsis": {
+      "installerIcon": "icons/icon.ico",
+      "installerHeaderIcon": "icons/icon.ico",
+      "createDesktopShortcut": true,
+      "startMenuShortcut": true
+    }
+  }
+}

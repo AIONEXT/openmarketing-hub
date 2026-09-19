@@ -1,0 +1,2 @@
+-keep class com.tauri.** { *; }
+-keepclassmembers class com.tauri.** { *; }
