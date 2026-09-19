@@ -1,5 +1,6 @@
 {
   "compilerOptions": {
+    "ignoreDeprecations": "6.0",
     "target": "ES2020",
     "lib": ["DOM", "DOM.Iterable", "ES6"],
     "allowJs": false,
@@ -13,11 +14,7 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "noEmit": true,
-    "jsx": "react-jsx",
-    "baseUrl": ".",
-    "paths": {
-      "@/*": ["src/*"]
-    }
+    "jsx": "react-jsx"
   },
   "include": ["src", "vite.config.ts"],
   "exclude": ["node_modules", "dist", "src-tauri"]

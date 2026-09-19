@@ -4,22 +4,12 @@ Production-ready deployment for commercial use across Windows, macOS, Android, a
 
 ## Architecture
 
-```
-┌──────────────┐     ┌──────────────┐     ┌──────────────┐
-│  Desktop App │────▶│  Backend API │────▶│  PostgreSQL  │
-│  (Tauri)     │     │  (Express)   │     │  + Redis     │
-│  .exe/.dmg   │     │  :3000       │     │              │
-└──────────────┘     └──────────────┘     └──────────────┘
-         │                    │
-         │         ┌──────────┴──────────┐
-         │         │   Worker (BullMQ)   │
-         │         └─────────────────────┘
-```
-
-## Prerequisites
-
-- **Node.js** 20.x or later
-- **Rust** (for Tauri desktop builds): `curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh`
+```mermaid
+graph LR
+    A[Desktop App] -->|HTTP| B[Backend API]
+    A -->|HTTP| C[PostgreSQL]
+    C -->|Query| D[Redis]
+    E[Worker] -->|Queue| D
 - **JDK 17+** (for Android APK builds)
 - **Android SDK/NDK** (for `.apk` builds): install via Android Studio
 - **PostgreSQL** 16+
@@ -53,7 +43,7 @@ npm start
 
 ## 2. Build Desktop Apps
 
-Uses [Tauri](https://tauri.app) — a Rust-based framework that packages your React app into native desktop and mobile binaries.
+OpenMarketing Hub uses [Tauri](https://tauri.app) — a Rust-based framework that packages your React app into native desktop and mobile binaries.
 
 ### Prerequisites for Tauri
 
@@ -142,7 +132,7 @@ docker stack deploy -c deploy/production.yml omh
 ## 6. Environment Variables Reference
 
 | Variable | Required | Description |
-|----------|----------|-------------|
+| --- | --- | --- |
 | `NODE_ENV` | Yes | Set to `production` |
 | `DATABASE_URL` | Yes | PostgreSQL connection string |
 | `REDIS_URL` | Yes | Redis connection string |

@@ -1,8 +1,9 @@
 # OpenMarketing Hub - Desktop App
 
-Native desktop and mobile wrapper for the OpenMarketing Hub web app, built with [Tauri](https://tauri.app).
+Native desktop and mobile wrapper for the OpenMarketing Hub web app, built with the Tauri framework.
 
 Produces installers for:
+
 - **Windows** → `.exe` / `.msi` (installer)
 - **macOS** → `.dmg` (disk image)
 - **Android** → `.apk` (application package)
@@ -68,6 +69,7 @@ npm run package:all
 ## Architecture
 
 The desktop app is a thin wrapper that:
+
 1. Bundles the React frontend (Vite)
 2. Embeds a Rust-based native shell (Tauri)
 3. Connects to your backend API (localhost or remote)
@@ -82,7 +84,6 @@ desktop/
 │   └── components/
 ├── src-tauri/            # Rust backend (Tauri)
 │   ├── src/lib.rs
-│   ├── src-tauri/
 │   ├── tauri.conf.json
 │   ├── Cargo.toml
 │   ├── build.rs
@@ -96,7 +97,7 @@ desktop/
 ## Distribution
 
 | Platform | Build Command | Output Path |
-|----------|--------------|-------------|
+| --- | --- | --- |
 | Windows `.exe`/`.msi` | `npm run package:windows` | `desktop/src-tauri/target/release/bundle/nsis/` |
 | macOS `.dmg` | `npm run package:macos` | `desktop/src-tauri/target/release/` |
 | Android `.apk` | `npm run package:android` | `desktop/src-tauri/target/aarch64-linux-android/release/` |
