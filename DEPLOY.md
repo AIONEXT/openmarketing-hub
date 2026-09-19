@@ -152,7 +152,11 @@ docker stack deploy -c deploy/production.yml omh
 - **Windows installer**: NSIS (`bundle.targets: ["nsis"]`)
 - **macOS installer**: DMG (`bundle.targets: ["dmg"]`)
 - **Android APK**: AArch64 Linux Android (`bundle.targets: ["apk"]`)
-- **App icon**: `desktop/src-tauri/icons/` (32x32.png, 128x128.png, 128x128@2x.png, icon.ico)
+- **App icon**: `desktop/src-tauri/icons/` folder containing:
+  - `32x32.png`
+  - `128x128.png`
+  - `128x128@2x.png`
+  - `icon.ico`
 
 ### Android Configuration
 
